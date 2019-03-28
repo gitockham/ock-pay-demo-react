@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@arkecosystem/pay@https://github.com/ArkEcosystem/pay":
+"@gitockham/ock-pay@https://github.com/gitockham/ock-pay":
   version "0.1.11"
-  resolved "https://github.com/ArkEcosystem/pay#b3af7bf0644027b0b94461a3af3c6c7d4c7a0a4d"
+  resolved "https://github.com/gitockham/ock-pay#b3af7bf0644027b0b94461a3af3c6c7d4c7a0a4d"
   dependencies:
     axios "^0.18.0"
     bignumber.js "^8.0.1"

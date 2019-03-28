@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import QRCode from 'qrcode'
-import ArkPay from '@arkecosystem/pay'
+import OckPay from '@gitockham/ock-pay'
 import { sample } from 'lodash'
 import uuid from 'uuid/v1'
 
@@ -52,13 +52,13 @@ class App extends React.Component {
   }
 
   async setup () {
-    const gateway = new ArkPay()
+    const gateway = new OckPay()
     gateway
       .recipient(this.state.recipient)
       .amount(this.state.amount)
       .vendorField(this.state.vendorField)
-      .currency('USD')
-      .coin('ARK')
+      .currency('EUR')
+      .coin('OCK')
       .network('devnet')
 
     gateway.on('started', data => {
@@ -71,7 +71,7 @@ class App extends React.Component {
     })
 
     gateway.peers([{
-      ip: 'dexplorer.ark.io',
+      ip: 'dexplorer.ockham.consulting',
       port: 8443,
       protocol: 'https',
     }])
@@ -132,7 +132,7 @@ class App extends React.Component {
   }
 
   scanLink () {
-    return `ark:${this.state.recipient}?amount=${this.state.amountCrypto}&vendorField=${this.state.vendorField}`
+    return `ock:${this.state.recipient}?amount=${this.state.amountCrypto}&vendorField=${this.state.vendorField}`
   }
 
   changeMethod (value) {
@@ -187,7 +187,7 @@ class App extends React.Component {
                             </div>
 
                             <div className="mt-3 pb-3 border-b-2 border-dashed">
-                                <small className="block mb-2">ARK Address</small>
+                                <small className="block mb-2">OCKHAM Address</small>
                                 <span className="font-bold">
                                     {this.state.recipient}
                                     <a href="#" className="clipboard float-right animated"><img onClick={this.copyToClipboard.bind(this, 'recipient')} src="images/clipboard.png" /></a>
